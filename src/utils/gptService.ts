@@ -27,12 +27,18 @@ Focus on:
 export async function analyzeWithGPT(statementText: string) {
   console.log("statementText", statementText)
   try {
+    // const apiKey = process.env.REACT_APP_GPT_API_KEY;
+    const apiKey = import.meta.env.VITE_GPT_API_KEY;
+    if (!apiKey) {
+      throw new Error("API Key is not defined in the environment variables");
+    }
+
     // Replace with your API endpoint and key
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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' // Replace with your API key
+        'Authorization': `Bearer ${apiKey}` // Replace with your API key
       },
       body: JSON.stringify({
         model: 'gpt-4o',
