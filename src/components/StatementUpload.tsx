@@ -73,7 +73,7 @@ export default function StatementUpload({ onTransactionsProcessed, onAnalysisRec
                   <p className="mb-2 text-sm text-gray-500">
                     <span className="font-semibold">Click to upload</span> or drag and drop
                   </p>
-                  <p className="text-xs text-gray-500">CSV, PDF, or bank statement text file</p>
+                  <p className="text-xs text-gray-500">CSV or bank statement text file</p>
                 </>
               )}
             </div>
